@@ -40,10 +40,10 @@ body {
 .video1 {
   display: flex;
   justify-content: center;
-  border: 2px solid #000;
+  border: 2px solid red;
   width: 80%;
   margin: 200px auto;
-  z-index: 3;
+  z-index: 6;
 }
 
 .button-start {
@@ -56,8 +56,6 @@ body {
 
 .timer {
   width: 1000px;
-  margin-left: 200px;
-  margin-bottom: 200px;
 }
 
 .button-play {
@@ -89,16 +87,29 @@ body {
 }
 
 .containerButton {
+  opacity: 0;
   display: flex;
-  position: absolute;
-  bottom: 0px;
-  margin-left: 150px;
+  position: relative;
+  bottom: 320px;
+  left: 0px;
+  margin-left: 20%;
+  margin-right: 10%;
   border: 2px solid #fff;
   z-index: 2;
 }
 
 .volume {
-  background-color: #fff;
+  background: transparent;
   margin-top: 17px;
   margin-left: 200px;
+}
+
+.volume::-moz-range-thumb {
+  box-shadow: 2px 1px 1px red, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 40%;
+  background: #ffffff;
+  cursor: pointer;
 }
