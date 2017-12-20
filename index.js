@@ -1,13 +1,22 @@
 var srcMovie = data.films[0].img;
 
+
+var titleAllMov = document.createElement('h4');
+titleAllMov.setAttribute('class', 'titleAllMovies');
+titleAllMov.textContent = 'Tout les films';
+document.body.appendChild(titleAllMov);
+
 var div = document.createElement('div');
 div.setAttribute('class', 'content');
 document.body.appendChild(div);
 
 for (var i = 0; i < srcMovie.length; i++) {
+  var divImg = document.createElement('div');
+  divImg.setAttribute('class', 'contentImg');
+  div.appendChild(divImg);
   var img = document.createElement('img');
   img.setAttribute('class', 'affiche');
-  div.appendChild(img);
+  divImg.appendChild(img);
   var hal = data.films[i].img;
   img.src = hal;
 }
@@ -42,3 +51,4 @@ window.addEventListener('scroll', function() {
   }
   modal.style.display = '';
 })
+
