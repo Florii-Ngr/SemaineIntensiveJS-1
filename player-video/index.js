@@ -7,19 +7,26 @@ var div = document.createElement('div');
 div.setAttribute('class', 'content');
 document.body.appendChild(div);
 
+var divHover = document.createElement('div');
+divHover.setAttribute('class', 'containerHover');
+div.appendChild(divHover);
+
 var vid = document.createElement('video');
 vid.setAttribute('class', 'video1');
-div.appendChild(vid);
+divHover.appendChild(vid);
 vid.src = "HETIC_SI_JS/TIE+Fighter+-+short+film(720p).mp4";
 
 var imgStart = document.createElement('img');
 imgStart.setAttribute('class', 'button-start');
-div.appendChild(imgStart);
+divHover.appendChild(imgStart);
 imgStart.src = "img/start-button.png";
+
+
+
 
 var divButton = document.createElement('div');
 divButton.setAttribute('class', 'containerButton');
-div.appendChild(divButton);
+divHover.appendChild(divButton);
 
 
 var imgPlay = document.createElement('img');
@@ -56,7 +63,7 @@ inputSon.onchange = "SetVolume(this.value)";
 
 var inputTimer = document.createElement('input');
 inputTimer.setAttribute('class', 'timer');
-document.body.appendChild(inputTimer);
+div.appendChild(inputTimer);
 inputTimer.type = "range";
 inputTimer.step = "1";
 
@@ -79,7 +86,7 @@ var buttonStart = document.querySelector('.button-start')
 var buttonPlay = document.querySelector('.button-play');
 var buttonPause = document.querySelector('.button-pause');
 var buttonStop = document.querySelector('.button-stop');
-var button = document.querySelector('.button');
+var button = document.querySelector('.containerButton');
 var title = document.querySelector('.titleMovie');
 
 title.innerHTML = titleMovie;
@@ -124,4 +131,34 @@ var timer = document.querySelector('.timer');
 
 setInterval(function() {
   timer.value = player.currentTime / player.duration * 100
-}, 10)
+}, 10);
+
+var timeAll = document.querySelector('.timeDuration');
+div.appendChild(timeAll);
+timeAll.innerHTML = data.films[0].duration;
+
+
+
+var hover = document.querySelector('.containerHover');
+
+
+
+
+
+//les film
+var but = document.querySelector('.button3')
+
+for (let i = 0; i < data.films.length; i++) {
+  var abc = data.films[i].title;
+  var element = document.createElement('button');
+  element.setAttribute('class', 'heello');
+  but.appendChild(element);
+  element.textContent = abc;
+}
+
+var ton = document.querySelectorAll('.heello');
+for (let i = 0; i < ton.length; i++) {
+  ton[i].addEventListener('click', function() {
+    player.setAttribute('src', 'HETIC_SI_JS/' + data.films[i].src);
+  })
+}
