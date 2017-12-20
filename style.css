@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #9B9B9B;
+  background-color: #f4f4f4;
   overflow-x: hidden;
 }
 
@@ -13,36 +13,40 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  background-color: #141414;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   font-family: 'raleway';
   box-shadow: 2px 2px 2px 2px;
   z-index: 1;
+  padding-bottom: 20px;
 }
 
 .container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: baseline;
 }
 
-.logo {
-  margin: 50px 49px 49px 149px;
-}
-
 .lienNav {
-  color: #fff;
+  color: #000;
   text-decoration: none;
   margin-right: 40px;
 }
 
-.recherche {
-  margin-left: 683px;
-  width: 25px;
+.rechercheContent {
+  display: flex;
+  margin-left: 200px;
 }
 
-.bonhomme {
-  margin-left: 13px;
-  width: 25px;
+.icon {
+  width: 20px;
+  margin-right: 20px;
+}
+
+.Toutvoir {
+  border: 2px solid #000;
+  padding: 8px 15px 8px 15px;
 }
 
 .note {
@@ -57,14 +61,17 @@ body {
   font-size: 20px;
 }
 
+.contentImg {
+  margin-left: 20%;
+  margin-bottom: 40px;
+}
+
 .affiche {
-  margin-bottom: 100px;
   width: 200px;
+  height: 250px;
   border: 5px solid #000;
   border-radius: 2px;
-  height: 200px;
   cursor: pointer;
-  margin-right: 150px;
 }
 
 .affiche:hover {
@@ -106,7 +113,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  margin-top: 215px;
-  margin-right: 50px;
-  margin-left: 240px;
+  margin-top: 50px;
+}
+
+.titleAllMovies {
+  font-family: 'raleway';
+  text-decoration: underline;
+  color: #000;
+  margin-top: 200px;
 }
